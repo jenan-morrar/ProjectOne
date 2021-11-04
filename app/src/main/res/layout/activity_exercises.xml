@@ -7,11 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".ExercisesActivity">
 
-    <TextView
+    <ListView
+        android:id="@+id/exerciseListView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:text="Sport"/>
+        android:layout_height="match_parent"
+        android:background="#788887"
+        android:entries="@array/days" />
+
     <FrameLayout
         android:id="@+id/fl_wrapper"
         android:layout_width="match_parent"

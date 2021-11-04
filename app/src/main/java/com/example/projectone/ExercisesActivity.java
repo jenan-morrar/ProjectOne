@@ -8,15 +8,43 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import model.exerciseModel;
+
 public class ExercisesActivity extends AppCompatActivity {
+    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercises);
+
+        // List View Items:
+
+        listView = findViewById(R.id.exerciseListView);
+        exerciseModel model = new exerciseModel();
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                Intent intent = null;
+                String selectedItem = (String) parent.getItemAtPosition(position);
+                intent = new Intent(getApplicationContext(), exerciseItemActivity.class);
+                intent.putExtra("Data", selectedItem);
+
+                if(intent != null){
+                    startActivity(intent);
+                }
+            }
+        });
+
+        // Navigation Bar
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.ic_sport);
 
