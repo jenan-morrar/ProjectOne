@@ -8,38 +8,35 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.Window;
-import android.view.WindowManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class HomeActivity extends AppCompatActivity {
+public class FavouriteActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_favourite);
+
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setSelectedItemId(R.id.ic_home);
+        bottomNavigationView.setSelectedItemId(R.id.ic_favourite);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
+                switch (item.getItemId()){
+                    case  R.id.ic_home:
+                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
                     case R.id.ic_sport:
                         startActivity(new Intent(getApplicationContext(), ExercisesActivity.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                    case R.id.ic_home:
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.ic_favourite:
-                        startActivity(new Intent(getApplicationContext(), FavouriteActivity.class));
-                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.ic_logout:
-                        AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
+                        AlertDialog.Builder builder = new AlertDialog.Builder(FavouriteActivity.this);
                         builder.setTitle("Confirmation message");
                         builder.setMessage("Do you want to logout from the application ?");
                         builder.setPositiveButton("Exit", new DialogInterface.OnClickListener() {
