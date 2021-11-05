@@ -9,7 +9,7 @@ public class exerciseModel {
     private ArrayList<exercise> exercises = new ArrayList<>();
 
     public exerciseModel(){
-        exercises.add(new exercise("exercise1","Day 1", "This exercise aims to tighten thigh fat, such that it needs 1 hours", R.drawable.exercise10 ));
+        exercises.add(new exercise("exercise1","Day 1", "This exercise aims to tighten thigh fat, such that it needs 1 hours", R.drawable.exercise1));
         exercises.add(new exercise("exercise2","Day 1", "This exercise aims to reduce the the fat of belly and thighs, such that it needs 2 hours", R.drawable.exercise5 ));
         exercises.add(new exercise("exercise3","Day 1", "This exercise aims to strengthen belly's muscles and burn the fat of thighs, such that it needs 1 hours", R.drawable.exercise17 ));
         exercises.add(new exercise("exercise4","Day 1", "This exercise aims to build shoulder's muscles, such that it needs 1 hours", R.drawable.exercise8 ));
