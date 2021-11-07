@@ -8,6 +8,12 @@
     android:id="@+id/drawer_layout"
     >
 
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/FavouriteExerciseImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp" />
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -19,7 +25,8 @@
                 android:id="@+id/main_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@android:color/white"
+                android:background="#990099"
+                app:titleTextColor="@color/white"
                 />
         </com.google.android.material.appbar.AppBarLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

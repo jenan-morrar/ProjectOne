@@ -1,17 +1,17 @@
 package com.example.projectone;
-
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.ArrayList;
+import com.google.gson.Gson;
 
 import model.User;
-import model.UserModel;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -37,14 +37,17 @@ public class SignUpActivity extends AppCompatActivity {
         String passwordString = password.getText().toString();
         String genderString = email.getText().toString();
         int ageString = Integer.parseInt(age.getText().toString());
-        UserModel userModel = new UserModel();
-        ArrayList<User> users = userModel.getUsers();
-        users.add(new User(name, passwordString, genderString, ageString));
+        User user = new User(name, passwordString, genderString, ageString);
 
-        Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
-        startActivity(intent);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = prefs.edit();
+        Gson gson = new Gson();
+        String userString = gson.toJson(user);
 
-        Toast.makeText(SignUpActivity.this,"You are successfully signed up", Toast.LENGTH_SHORT).show();
+        editor.putString("userSignUp", userString);
+        editor.commit();
+
+        Toast.makeText(SignUpActivity.this,"You are successfully signed up", Toast.LENGTH_LONG).show();
     }
 
     public void bakeToLogin (View view){

@@ -2,7 +2,9 @@ package com.example.projectone;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -13,21 +15,26 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.gson.Gson;
+
+import model.exercise;
+import pl.droidsonroids.gif.GifImageView;
 
 public class FavouriteActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
+    public GifImageView gifImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favourite);
 
+        gifImageView =findViewById(R.id.FavouriteExerciseImage);
         toolbar = findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
-
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
 
@@ -41,6 +48,12 @@ public class FavouriteActivity extends AppCompatActivity implements NavigationVi
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        Gson gson = new Gson();
+        String str = prefs.getString("userFavourite", "");
+        exercise exerciseObject = gson.fromJson(str, exercise.class);
+        gifImageView.setImageResource(exerciseObject.getImage());
 
     }
     @Override

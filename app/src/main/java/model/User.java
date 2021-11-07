@@ -4,13 +4,13 @@ public class User {
 
     private String userName;
     private String password;
-    private String gender;
+    private String email;
     private int age;
 
-    public User(String userName, String password, String gender, int age) {
+    public User(String userName, String password, String email, int age) {
         this.userName = userName;
         this.password = password;
-        this.gender = gender;
+        this.email = email;
         this.age = age;
     }
 
@@ -22,8 +22,8 @@ public class User {
         return password;
     }
 
-    public String getGender() {
-        return gender;
+    public String getEmail() {
+        return email;
     }
 
     public int getAge() {
@@ -38,8 +38,8 @@ public class User {
         this.password = password;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setAge(int age) {

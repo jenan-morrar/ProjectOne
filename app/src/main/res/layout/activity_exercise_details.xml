@@ -15,7 +15,7 @@
             android:id="@+id/exerciseImage"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-             />
+            android:layout_marginTop="40dp" />
 
         <TextView
             android:id="@+id/text_view_countdown"
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_below="@+id/exerciseImage"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/text_shape"
             android:gravity="center"
             android:text="00:00"
@@ -38,7 +38,7 @@
             android:layout_centerHorizontal="true"
             android:background="@drawable/custom_button"
             android:text="start"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="10dp"/>
 
         <Button
             android:id="@+id/button_reset"
@@ -51,7 +51,20 @@
             android:text="reset"
             android:visibility="invisible"
             tools:visibility="visible"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/addToFavourite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button_start_pause"
+            android:background="@drawable/custom_button"
+            android:text="@string/add_to_favourite"
+            android:layout_marginTop="10dp"
+            android:onClick="addFavourite"
+            tools:ignore="UsingOnClickInXml"
+            android:layout_centerHorizontal="true"
+            />
     </RelativeLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -66,7 +79,9 @@
                 android:id="@+id/main_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@android:color/white" />
+                android:background="#990099"
+                app:titleTextColor="@color/white"
+                />
         </com.google.android.material.appbar.AppBarLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

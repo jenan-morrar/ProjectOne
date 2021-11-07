@@ -2,12 +2,15 @@ package com.example.projectone;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -17,6 +20,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -39,6 +43,9 @@ public class exerciseDetailsActivity extends AppCompatActivity implements Naviga
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
+    private exerciseModel model = new exerciseModel();
+    private ArrayList<exercise> exercises = model.getExercises();
+    private String exerciseId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,15 +53,9 @@ public class exerciseDetailsActivity extends AppCompatActivity implements Naviga
         setContentView(R.layout.activity_exercise_details);
 
         Intent intent = getIntent();
-        String exerciseId = intent.getStringExtra("Data");
+        exerciseId = intent.getStringExtra("Data");
 
-        exerciseModel model = new exerciseModel();
-        ArrayList<exercise> exercises = model.getExercises();
-
-        //textView =findViewById(R.id.exerciseId);
         gifImageView =findViewById(R.id.exerciseImage);
-
-        //textView.setText(exerciseId);
 
         for(int i=0; i<exercises.size(); i++){
             if(exercises.get(i).getId().equals(exerciseId)){
@@ -85,7 +86,8 @@ public class exerciseDetailsActivity extends AppCompatActivity implements Naviga
             }
         });
 
-        updateCountDownText();
+        Thread thread = new Thread(new MyTask());
+        thread.start();
 
         toolbar = findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
@@ -109,7 +111,8 @@ public class exerciseDetailsActivity extends AppCompatActivity implements Naviga
             @Override
             public void onTick(long millisUntilFinished) {
                 mTimeLeftInMillis = millisUntilFinished;
-                updateCountDownText();
+                Thread thread = new Thread(new MyTask());
+                thread.start();
             }
 
             @Override
@@ -175,18 +178,56 @@ public class exerciseDetailsActivity extends AppCompatActivity implements Naviga
 
     private void resetTimer() {
         mTimeLeftInMillis = START_TIME_IN_MILLIS;
-        updateCountDownText();
+        //updateCountDownText();
+        Thread thread = new Thread(new MyTask());
+        thread.start();
         mButtonReset.setVisibility(View.INVISIBLE);
         mButtonStartPause.setVisibility(View.VISIBLE);
     }
 
-    private void updateCountDownText() {
-        int minutes = (int) (mTimeLeftInMillis / 1000) / 60;
-        int seconds = (int) (mTimeLeftInMillis / 1000) % 60;
+    public void addFavourite(View view) {
 
-        String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
+        String excDay = "";
+        String excDic = "";
+        int excImg =0;
 
-        mTextViewCountDown.setText(timeLeftFormatted);
+        for(int i=0; i<exercises.size(); i++){
+            if(exercises.get(i).getId().equals(exerciseId)){
+                excDay = exercises.get(i).getDay();
+                excDic = exercises.get(i).getDescription();
+                excImg = exercises.get(i).getImage();
+            }
+        }
+        exercise exerciseObject = new exercise(exerciseId,excDay,excDic,excImg);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = prefs.edit();
+        Gson gson = new Gson();
+        String userFavouriteString = gson.toJson(exerciseObject);
+
+        editor.putString("userFavourite", userFavouriteString);
+        editor.commit();
+
+        Toast.makeText(exerciseDetailsActivity.this,"added successfully", Toast.LENGTH_LONG).show();
+    }
+
+    class MyTask implements Runnable{
+        public MyTask(){
+        }
+        @Override
+        public void run() {
+
+            int minutes = (int) (mTimeLeftInMillis / 1000) / 60;
+            int seconds = (int) (mTimeLeftInMillis / 1000) % 60;
+
+            String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
+
+            mTextViewCountDown.post(new Runnable() {
+                @Override
+                public void run() {
+                    mTextViewCountDown.setText(timeLeftFormatted);
+                }
+            });
+        }
     }
 
 }
