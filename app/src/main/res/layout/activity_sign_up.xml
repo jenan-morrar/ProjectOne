@@ -3,23 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/background" />
+        android:src="@drawable/background2" />
 
 
     <EditText
-        android:id="@+id/loginName"
+        android:id="@+id/signUpName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="90dp"
         android:backgroundTint="#8EBABC"
         android:drawableLeft="@drawable/username"
         android:ems="10"
@@ -29,56 +28,68 @@
         android:textSize="15sp" />
 
     <EditText
-        android:id="@+id/loginPassword"
+        android:id="@+id/signUpPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="150dp"
         android:backgroundTint="#8EBABC"
         android:drawableLeft="@drawable/password"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        android:textSize="15sp"
+        android:textSize="15sp" />
 
-        />
-
-    <CheckBox
-        android:id="@+id/checkBox"
+    <EditText
+        android:id="@+id/signUpEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="270dp"
-        android:backgroundTint="#F8F1F1"
+        android:layout_marginTop="200dp"
+        android:backgroundTint="#8EBABC"
+        android:drawableLeft="@drawable/email"
+        android:ems="10"
+        android:hint="User@example.com"
+        android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Remember me later"
-        android:textColor="#452245"
-        android:textSize="14sp" />
+        android:textSize="15sp" />
 
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
+    <EditText
+        android:id="@+id/signUpAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="340dp"
-        android:background="@drawable/custom_button"
-        android:onClick="login"
-        android:text="Login"
-        android:textColor="#452245"
-        android:textSize="14sp"
-        tools:ignore="OnClick" />
+        android:layout_marginTop="260dp"
+        android:backgroundTint="#8EBABC"
+        android:drawableLeft="@drawable/age"
+        android:ems="10"
+        android:hint="Age"
+        android:minHeight="48dp"
+        android:textSize="15sp" />
 
     <Button
         android:id="@+id/signUpButton"
         android:layout_width="150dp"
         android:layout_height="48dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="330dp"
         android:background="@drawable/custom_button"
-        android:onClick="signUp"
+        android:onClick="signUpUser"
         android:text="Sign Up"
         android:textColor="#452245"
-        android:textSize="14sp"
-        tools:ignore="OnClick" />
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/backToLoginButton"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="390dp"
+        android:background="@drawable/custom_button"
+        android:onClick="bakeToLogin"
+        android:text="Login"
+        android:textColor="#452245"
+        android:textSize="14sp" />
+
 </FrameLayout>
