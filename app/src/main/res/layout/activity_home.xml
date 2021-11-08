@@ -8,40 +8,43 @@
     android:id="@+id/drawer_layout"
     >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:gravity="center_horizontal"
-        android:text="Welcome to Fit the Fat"
-        android:textColor="@color/black"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/homeUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:gravity="center_horizontal"
-        android:text="Username: "
-        android:textColor="@color/black"
-        android:textSize="22sp" />
-
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/homeInfo"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="235dp"
-            android:gravity="center_horizontal"
-            android:text="@string/homeInfo"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:text="Welcome to Fit the Fat"
+            android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="15sp"
-            android:layout_marginBottom="3dp"/>
-    </ScrollView>
+            android:textSize="25sp" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp">
+            <TextView
+                android:id="@+id/homeInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="text"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+        </ScrollView>
+    </LinearLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"

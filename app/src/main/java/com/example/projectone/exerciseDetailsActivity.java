@@ -188,17 +188,15 @@ public class exerciseDetailsActivity extends AppCompatActivity implements Naviga
     public void addFavourite(View view) {
 
         String excDay = "";
-        String excDic = "";
         int excImg =0;
 
         for(int i=0; i<exercises.size(); i++){
             if(exercises.get(i).getId().equals(exerciseId)){
                 excDay = exercises.get(i).getDay();
-                excDic = exercises.get(i).getDescription();
                 excImg = exercises.get(i).getImage();
             }
         }
-        exercise exerciseObject = new exercise(exerciseId,excDay,excDic,excImg);
+        exercise exerciseObject = new exercise(exerciseId,excDay,excImg);
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = prefs.edit();
         Gson gson = new Gson();

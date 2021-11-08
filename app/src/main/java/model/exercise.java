@@ -1,18 +1,14 @@
 package model;
 
-import android.widget.ImageView;
-
 public class exercise {
     private String id;
     private String day;
-    private String description;
     private int image;
 
 
-    public exercise(String id,String day, String description, int image) {
+    public exercise(String id,String day, int image) {
         this.id = id;
         this.day = day;
-        this.description = description;
         this.image = image;
     }
 
@@ -23,9 +19,6 @@ public class exercise {
         return day;
     }
 
-    public String getDescription() {
-        return description;
-    }
 
     public int getImage() {
         return image;
@@ -36,10 +29,6 @@ public class exercise {
     }
     public void setDay(String day) {
         this.day = day;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public void setImage(int image) {

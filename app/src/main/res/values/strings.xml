@@ -7,9 +7,6 @@
     <string name="logout">Logout</string>
     <string name="openNavDrawer">Navigation Drawer Open</string>
     <string name="closeNavDrawer">Navigation Drawer Close</string>
-    <string name="homeInfo">This app aims to fit the fat, where it helps to reduce weight, build body muscles and burn fat, in addition to tightening fat sagging.
-Where the exercises in this application have been divided into warm-up exercises, muscle relaxation exercises, abdominal exercises, exercises to build shoulder muscles, and there are exercises to burn thigh fat, as the duration of each exercise is approximately 5-6 minutes per day, so that I this system helps The body adapts to exercise and gradually begins to lose weight.
-    Note: All the exercises in this application have been practiced before and research has been done about the consequences thereof, as these exercises do not pose a danger to anyone, but it should be careful while doing these exercises, in addition to that he likes to do warm-up exercises before starting any of the stretching exercises or Build muscle as this may cause muscle strain resulting in muscle tear.</string>
     <string name="add_to_favourite">Favourite</string>
     <array name="days">
         <item>Day 1</item>
