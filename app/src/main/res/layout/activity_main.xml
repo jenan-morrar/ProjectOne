@@ -8,40 +8,25 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/background" />
-
+        android:src="@drawable/background"
+        style="@style/BackgroundImage"
+        />
 
     <EditText
         android:id="@+id/loginName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="160dp"
-        android:backgroundTint="#8EBABC"
+        android:hint="@string/username_login"
         android:drawableLeft="@drawable/username"
-        android:ems="10"
-        android:hint="Username"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textSize="15sp" />
+        android:layout_marginTop="160dp"
+        style="@style/TextFieldStyle"
+        android:inputType="textPersonName"/>
 
     <EditText
         android:id="@+id/loginPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="220dp"
-        android:backgroundTint="#8EBABC"
         android:drawableLeft="@drawable/password"
-        android:ems="10"
-        android:hint="Password"
+        android:hint="@string/password_login"
+        android:layout_marginTop="220dp"
+        style="@style/TextFieldStyle"
         android:inputType="textPassword"
-        android:minHeight="48dp"
-        android:textSize="15sp"
-
         />
 
     <CheckBox
@@ -52,33 +37,24 @@
         android:layout_marginTop="270dp"
         android:backgroundTint="#F8F1F1"
         android:minHeight="48dp"
-        android:text="Remember me later"
+        android:text="@string/remember_me_later"
         android:textColor="#452245"
         android:textSize="14sp" />
 
     <Button
         android:id="@+id/loginButton"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="340dp"
-        android:background="@drawable/custom_button"
         android:onClick="login"
-        android:text="Login"
-        android:textColor="#452245"
-        android:textSize="14sp"
-        tools:ignore="OnClick" />
+        android:text="@string/login_1"
+        tools:ignore="OnClick"
+        style="@style/ButtonStyle"
+        android:layout_marginTop="340dp"/>
 
     <Button
         android:id="@+id/signUpButton"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:layout_gravity="center_horizontal"
         android:layout_marginTop="400dp"
-        android:background="@drawable/custom_button"
+        android:text="@string/sign_up_1"
         android:onClick="signUp"
-        android:text="Sign Up"
-        android:textColor="#452245"
-        android:textSize="14sp"
-        tools:ignore="OnClick" />
+        tools:ignore="OnClick"
+        style="@style/ButtonStyle"
+         />
 </FrameLayout>

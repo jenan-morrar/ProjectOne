@@ -7,89 +7,62 @@
     tools:context=".SignUpActivity">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/background2" />
+        android:src="@drawable/background2"
+        style="@style/BackgroundImage" />
 
 
     <EditText
         android:id="@+id/signUpName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:layout_marginTop="90dp"
-        android:backgroundTint="#8EBABC"
         android:drawableLeft="@drawable/username"
-        android:ems="10"
-        android:hint="Username"
+        android:hint="@string/username_signUp"
         android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textSize="15sp" />
+        style="@style/TextFieldStyle"
+        />
 
     <EditText
         android:id="@+id/signUpPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:layout_marginTop="150dp"
-        android:backgroundTint="#8EBABC"
         android:drawableLeft="@drawable/password"
-        android:ems="10"
-        android:hint="Password"
+        android:hint="@string/password_signUp"
         android:inputType="textPassword"
-        android:minHeight="48dp"
-        android:textSize="15sp" />
+        style="@style/TextFieldStyle"
+        />
 
     <EditText
         android:id="@+id/signUpEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:layout_marginTop="200dp"
-        android:backgroundTint="#8EBABC"
         android:drawableLeft="@drawable/email"
-        android:ems="10"
-        android:hint="User@example.com"
+        android:hint="@string/user_example_com"
         android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textSize="15sp" />
+        style="@style/TextFieldStyle"
+        />
 
     <EditText
         android:id="@+id/signUpAge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:layout_marginTop="260dp"
         android:backgroundTint="#8EBABC"
         android:drawableLeft="@drawable/age"
-        android:ems="10"
-        android:hint="Age"
-        android:minHeight="48dp"
-        android:textSize="15sp" />
+        android:hint="@string/age"
+        style="@style/TextFieldStyle"
+        />
 
     <Button
         android:id="@+id/signUpButton"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:layout_gravity="center_horizontal"
         android:layout_marginTop="330dp"
         android:background="@drawable/custom_button"
         android:onClick="signUpUser"
-        android:text="Sign Up"
-        android:textColor="#452245"
-        android:textSize="14sp" />
+        android:text="@string/sign_up"
+        style="@style/ButtonStyle"
+        />
 
     <Button
         android:id="@+id/backToLoginButton"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:layout_gravity="center_horizontal"
         android:layout_marginTop="390dp"
         android:background="@drawable/custom_button"
         android:onClick="bakeToLogin"
-        android:text="Login"
-        android:textColor="#452245"
-        android:textSize="14sp" />
+        android:text="@string/login_signUp"
+        style="@style/ButtonStyle"
+        />
 
 </FrameLayout>

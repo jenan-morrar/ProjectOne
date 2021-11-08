@@ -13,30 +13,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="90dp" />
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout style="@style/CoordinatorStyle">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
+        <com.google.android.material.appbar.AppBarLayout style="@style/AppBarStyle">
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/main_toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="#990099"
                 app:titleTextColor="@color/white"
-                />
+                style="@style/toolbarStyle" />
         </com.google.android.material.appbar.AppBarLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
         app:headerLayout="@layout/nav_header_layout"
-        app:menu="@menu/navigation_bar" />
-
+        app:menu="@menu/navigation_bar"
+        style="@style/navBarStyle" />
 </androidx.drawerlayout.widget.DrawerLayout>

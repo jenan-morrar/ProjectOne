@@ -73,8 +73,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 this,
                 drawerLayout,
                 toolbar,
-                R.string.openNavDrawer,
-                R.string.closeNavDrawer
+                R.string.nav_open,
+                R.string.nav_close
         );
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();

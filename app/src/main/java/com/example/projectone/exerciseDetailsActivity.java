@@ -98,8 +98,8 @@ public class exerciseDetailsActivity extends AppCompatActivity implements Naviga
                 this,
                 drawerLayout,
                 toolbar,
-                R.string.openNavDrawer,
-                R.string.closeNavDrawer
+                R.string.nav_open,
+                R.string.nav_close
         );
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
@@ -162,11 +162,6 @@ public class exerciseDetailsActivity extends AppCompatActivity implements Naviga
                 AlertDialog dialog = builder.show();
         }
         return false;
-    }
-
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-
     }
 
     private void pauseTimer() {

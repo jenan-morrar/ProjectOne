@@ -5,9 +5,25 @@
     <string name="exercises">Exercises</string>
     <string name="favourite">Favourite</string>
     <string name="logout">Logout</string>
-    <string name="openNavDrawer">Navigation Drawer Open</string>
-    <string name="closeNavDrawer">Navigation Drawer Close</string>
     <string name="add_to_favourite">Favourite</string>
+    <string name="username">Username</string>
+    <string name="fit_the_fat">Fit the Fat</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+    <string name="username_signUp">Username</string>
+    <string name="password_signUp">Password</string>
+    <string name="user_example_com">User@example.com</string>
+    <string name="age">Age</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="login_signUp">Login</string>
+    <string name="username_login">Username</string>
+    <string name="password_login">Password</string>
+    <string name="remember_me_later">Remember me later</string>
+    <string name="login_1">Login</string>
+    <string name="sign_up_1">Sign Up</string>
+    <string name="welcome_to_fit_the_fat">Welcome to Fit the Fat</string>
+    <string name="text_home">text</string>
+
     <array name="days">
         <item>Day 1</item>
         <item>Day 2</item>
@@ -16,5 +32,8 @@
         <item>Day 5</item>
         <item>Day 6</item>
         <item>Day 7</item>
+        <item>Day 8</item>
+        <item>Day 9</item>
+        <item>Day 10</item>
     </array>
 </resources>

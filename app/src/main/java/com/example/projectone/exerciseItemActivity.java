@@ -76,8 +76,8 @@ public class exerciseItemActivity extends AppCompatActivity implements Navigatio
                 this,
                 drawerLayout,
                 toolbar,
-                R.string.openNavDrawer,
-                R.string.closeNavDrawer
+                R.string.nav_open,
+                R.string.nav_close
         );
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
@@ -119,8 +119,4 @@ public class exerciseItemActivity extends AppCompatActivity implements Navigatio
         return false;
     }
 
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-
-    }
 }
